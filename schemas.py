@@ -26,7 +26,8 @@ class PostCreate(PostBase):
     user_id: int
 
 class PostUpdate(PostBase):
-    title: str = Field(min_length=1 , max_length=100)
+    title: str = Field(default=None, min_length=1 , max_length=100)
+    content: str | None = Field(default=None, min_length=1)
 
 
 class PostResponse(PostBase):
